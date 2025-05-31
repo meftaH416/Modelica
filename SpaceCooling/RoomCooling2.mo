@@ -1,4 +1,4 @@
-model RoomCooling2
+model RoomCooling2 
   Buildings.Fluid.MixingVolumes.MixingVolume room(redeclare package Medium = Buildings.Media.Air "Moist air", energyDynamics = Modelica.Fluid.Types.Dynamics.FixedInitial, mSenFac = 3, m_flow_nominal = 180*1.2*6/3600, V = 180, nPorts = 2)  annotation(
     Placement(transformation(origin = {88, 52}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Thermal.HeatTransfer.Sources.FixedHeatFlow heatGain(Q_flow = 1000)  annotation(
@@ -9,8 +9,6 @@ model RoomCooling2
     Placement(transformation(origin = {-90, 88}, extent = {{-10, -10}, {10, 10}})));
   Modelica.Thermal.HeatTransfer.Sources.PrescribedTemperature Tout annotation(
     Placement(transformation(origin = {-40, 52}, extent = {{-10, -10}, {10, 10}})));
-  Buildings.BoundaryConditions.WeatherData.Bus weaBus annotation(
-    Placement(transformation(origin = {-68, 88}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {-56, 52}, extent = {{-10, -10}, {10, 10}})));
   Buildings.Fluid.Movers.FlowControlled_m_flow mov(redeclare package Medium = Buildings.Media.Air "Moist air", energyDynamics = Modelica.Fluid.Types.Dynamics.SteadyState, nominalValuesDefineDefaultPressureCurve = true)  annotation(
     Placement(transformation(origin = {64, -12}, extent = {{-10, -10}, {10, 10}})));
   Buildings.Fluid.HeatExchangers.ConstantEffectiveness hex(redeclare package Medium1 = Buildings.Media.Air "Moist air", redeclare package Medium2 = Buildings.Media.Water "Water", dp1_nominal = 200, dp2_nominal = 200, eps = 0.8)  annotation(
